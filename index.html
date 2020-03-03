@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet"> 
+<script type="text/javascript" src="dist/fullpage.js"></script>
+<script type="text/javascript" src="dist/fullpage.scrollHorizontally.min.js"></script>
+<script type="text/javascript" src="dist/fullpage.extensions.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="dist/fullpage.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#fullpage{
+    margin-left: 420px;
+}
+
+#first-scroll{
+transition: opacity 500ms ease;
+background-color: #100e15 !important;
+}
+.header-top{
+    display:none;
+}
+#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+</style>
+</head>
+<body>
+
+    <div class="sidenav animated slideInLeft delay-1s">
+      <div class="sidenav-wrapper">
+            <div class="numdiv" style="animation: blink 2.5s ease-out infinite normal;">
+              0<span id="num" class="animated"></span>
+            </div>
+            <div class="menu-title">MAN&WOLF MEDIA<img style="padding:25px;" src="img/logo.png"><br/>PLEASE SCROLL</div>
+            <div class="vertical-menu">
+              <a href="#firstSection" class="active">Home</a>
+              <a href="#secondSection">Link 1</a>
+              <a href="#thirdSection">Link 2</a>
+            </div> 
+</div>
+        </div>
+
+      
+      <div id="fullpage" class="animated fadeIn delay-2s">
+        <section class="vertical-scrolling" id="first-scroll">
+          <div class="background-overlay"></div>
+          <video id="myVideo" loop muted data-autoplay>
+            <source src="https://demo.cocobasic.com/volos-wp/demo-2/wp-content/uploads/2019/12/video.mp4" type="video/mp4">
+          </video>
+          <div id="layer">
+          <h2>fullPage.js</h2>
+          <h3>This is the first section</h3>
+        </div>
+        
+        </section>
+        <section class="vertical-scrolling">
+          <h2>fullPage.js</h2>
+          <h3>This is the second section</h3>
+          <div class="scroll-icon">
+            <p>Jump into the last slide</p>
+            <a href="#fifthSection/1" class="icon-up-open-big"></a>
+          </div>
+        </section>
+        <section class="vertical-scrolling">
+          <h2>fullPage.js</h2>
+          <h3>This is the third section</h3>
+        </section>
+        <section class="vertical-scrolling">
+          <h2>fullPage.js</h2> 
+          <h3>This is the fourth section</h3>
+        </section>
+        <section class="vertical-scrolling">
+          <div class="horizontal-scrolling">
+            <h2>fullPage.js</h2>
+            <h3>This is the fifth section and it contains the first slide (actually section == first slide)</h3>
+          </div>
+          <div class="horizontal-scrolling">
+            <h2>fullPage.js</h2>
+            <h3>This is the second slide</h3> 
+            <p class="end">Thank you!</p>
+          </div>
+        </section>
+        <section class="vertical-scrolling">
+          <div class="horizontal-scrolling">
+            <h2>fullPage.js</h2>
+            <h3>This is the fifth section and it contains the first slide (actually section == first slide)</h3>
+          </div>
+          <div class="horizontal-scrolling">
+            <h2>fullPage.js</h2>
+            <h3>This is the second slide</h3> 
+            <p class="end">Thank you!</p>
+          </div>
+        </section>
+      </div>
+      <script>
+          
+// variables
+var $header_top = $('.header-top');
+var $nav = $('nav');
+
+
+
+// toggle menu 
+$header_top.find('a').on('click', function() {
+  $(this).parent().toggleClass('open-menu');
+});
+
+
+
+// fullpage customization
+$('#fullpage').fullpage({
+  sectionsColor: ['#B8AE9C', '#1b1925', '#F2AE72', '#5C832F', '#B8B89F'],
+  sectionSelector: '.vertical-scrolling',
+  slideSelector: '.horizontal-scrolling',
+  navigation: true,
+  scrollHorizontally: true,
+  fadingEffect:'sections',
+  slidesNavigation: true,
+  controlArrows: false,
+  autoScrolling: true,
+  anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
+  menu: '#menu',
+
+  afterLoad: function(anchorLink, index) {
+    var slideNumber = $('.fp-section.active').index() + 1;
+ //do whatever here
+ $('#num').html(slideNumber);
+    $nav.css('background', 'rgba(0, 47, 77, .25)');
+    if (index == 5) {
+        $('#fp-nav').hide();
+      }
+  },
+
+  onLeave: function(index, nextIndex, direction) {
+    if(index == 5) {
+      $('#fp-nav').show();
+    }
+  },
+
+  afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+    $('#num').append(Index);
+    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+      $.fn.fullpage.setAllowScrolling(false, 'up');
+      $header_top.css('background', 'transparent');
+      $nav.css('background', 'transparent');
+      $(this).css('background', '#374140');
+      $(this).find('h2').css('color', 'white');
+      $(this).find('h3').css('color', 'white');
+      $(this).find('p').css(
+        {
+          'color': '#DC3522',
+          'opacity': 1,
+          'transform': 'translateY(0)'
+        }
+      );
+    }
+  }, 
+
+  onSlideLeave: function( anchorLink, index, slideIndex, direction) {
+    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+      $.fn.fullpage.setAllowScrolling(true, 'up');
+      $header_top.css('background', 'rgba(0, 47, 77, .3)');
+      $nav.css('background', 'rgba(0, 47, 77, .25)');
+    }
+  } 
+}); 
+      </script>
+</body>
+</html> 
