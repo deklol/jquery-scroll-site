@@ -317,16 +317,14 @@ border: 1px solid #BFAF77 !important;
 }
 
 div#layer h2 {
-	background-color:
-	#13111b;
-	width: 14%;
+
 	margin: 0 auto;
 	}
 	
 .numdiv {
 	z-index: 100;
 	font-size: 160px;
-	color:#a46f6a;
+	color:#d8af77;
 	font-weight: 800;
 	font-family: 'Graduate' !important;
 }
@@ -374,7 +372,48 @@ nav li.active a,
 body.fp-viewing-fifthSection-1 #menu li:last-child a {
   background: #453659;
 }
+
+div#layer h2 span {
+	background-color: #13111b;
+	padding-left:15px;
+	padding-right:15px;
+}
   
+ /* Add a black background color to the top navigation */
+ .topnav {
+	background-color: #211f2b;
+	overflow: hidden;
+	display: none;
+	z-index:9999999999;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #100e15;
+	color: white;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+	background-color: #100E15;
+	color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+	display: none;
+  } 
 
 
 /* SECTION STYLES - fullPage.js 
@@ -450,6 +489,17 @@ h3 {
   .scroll-icon {
     display: none;
   }
+
+  .sidenav {
+    display:none;
+  }
+
+  #fullpage {
+    margin-left: 0px;
+}
+.topnav {
+	display: block;
+  }
 }
 
 div.sidenav-wrapper h4 {
@@ -478,7 +528,6 @@ div.sidenav-wrapper h3 {
     background-color: #13111b;
     overflow: hidden;
 	padding-top: 20px;
-	border-right: 5px #100e15 solid;
   }
   
   .sidenav a {
@@ -497,6 +546,10 @@ div.sidenav-wrapper h3 {
   html {
     font-size: 50%;
   }
+
+  #fullpage {
+	margin-left: 0px !important;
+}
   
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -508,4 +561,12 @@ div.sidenav-wrapper h3 {
 	nav li a {
 		padding: 3px;
 	}
+	.sidenav {
+		display:none;
+	  }
+	
+		.topnav {
+		display: block;
+	  }
 }
+  
