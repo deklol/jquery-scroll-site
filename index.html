@@ -1,267 +1,598 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet"> 
-<script type="text/javascript" src="dist/fullpage.js"></script>
-<script type="text/javascript" src="dist/fullpage.scrollHorizontally.min.js"></script>
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="dist/fullpage.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>MAN&WOLFMEDIA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Website and Website Designer based in Camberley, Surrey." />
+        <meta name="keywords" content="WEB DESIGN, WEB DEVELOPER, CAMBERLEY, SURREY, WEB, DESIGNER, WEBSTORE DESIGNER, ONLINE SHOP DESIGNER" />
+        <meta name="author" content="MAN&WOLFMEDIA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="images/favicon.ico" />      
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Poppins:400,700,800' rel='stylesheet' type='text/css' />	             
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet"> 
+        <script type="text/javascript" src="dist/fullpage.css"></script>
+        <script type="text/javascript" src="dist/fullpage.scrollHorizontally.min.js"></script>
+        <link href="https://deklol.github.io/jquery-scroll-site/dist/fullpage.js" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+                <script src="js/html5.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->          
+        </head>
 <style type="text/css">
-#fullpage{
-    margin-left: 420px;
-}
+.content-left {
+    background-color: #1c1c2b;
+    background-image:url("images/bg-bottest.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    }
+    </style>
+    <body>
 
-#first-scroll{
-transition: opacity 500ms ease;
-background-color: #100e15 !important;
-}
-.header-top{
-    display:none;
-}
-#myVideo{
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		top:0;
-		right:0;
-		width: 100%;
-		height: 100%;
-		background-size: 100% 100%;
- 		background-color: black; /* in case the video doesn't fit the whole page*/
-  		background-image: /* our video */;
-  		background-position: center center;
-  		background-size: contain;
-   		object-fit: cover; /*cover video background */
-   		z-index:3;
-	}
-</style>
-<style type="text/css">
-  
-  .fp-section {
-    width: 100%!important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .7s ease-in-out;
-  }
-  
-  .fp-section.active {
-    visibility: visible;
-    opacity: 1;
-  }
-    
-  .fp-slidesContainer {
-    width: 100%!important;
-    transform: none!important;
-  }
-  
-  .fp-slide {
-    width: 100%!important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .7s ease-in-out;
-  }
-  
-  .fp-slide.active {
-    visibility: visible;
-    opacity: 1;
-  }
-  </style>
-  <style>
-     /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
- @media screen and (max-width: 600px) {
-	.topnav a:not(:first-child) {display: none;}
-	.topnav a.icon {
-	  float: right;
-	  display: block;
-	}
-  }
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  @media screen and (max-width: 600px) {
-	.topnav.responsive {position: relative;}
-	.topnav.responsive a.icon {
-	  position: absolute;
-	  right: 0;
-	  top: 0;
-	}
-	.topnav.responsive a {
-	  float: none;
-	  display: block;
-	  text-align: left;
-	}
-  }
-  
-  </style>
-</head>
-<body>
-  <div class="topnav" id="myTopnav">
-    <a href="#firstSection" class="active">Home</a>
-    <a href="#secondSection">News</a>
-    <a href="#thirdSection">Contact</a>
-    <a href="#fourthSection">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-    <div class="sidenav animated slideInLeft delay-1s">
-      <div class="sidenav-wrapper">
-            <div class="numdiv" style="animation: blink 2.5s ease-out infinite normal;">
-              0<span id="num" class="animated"></span>
+        <!-- Preloader Gif -->
+        <div class="doc-loader">
+            <img src="images/preloader.gif" alt="Loading">
+        </div>
+
+        <div id="content" class="site-content">
+
+            <div class="content-left animated slideInLeft delay-1s">
+                <div class="content-left-wrapper">                     
+                    <header>
+                        <div class="toggle-holder">
+                            <div id="toggle">
+                                <div class="menu-line"></div>
+                            </div>
+                        </div>  
+
+                        <div class="top-pagination">
+                            <div class="small-num">
+                                0<span id="small-num"></span>                                    
+                            </div>
+                            <div class="pagination-div"></div>
+                            <div class="total-pages-num"></div>
+                        </div>
+
+                        <div class="menu-holder">
+                            <div class="menu-wrapper relative">                                 
+                                <nav id="header-main-menu">
+                                    <ul class="main-menu sm sm-clean">
+                                        <li><a href="#firstPage">Home</a></li>
+                                        <li><a href="#secondPage">Service</a></li>
+                                        <li><a href="#portfolio">Portfolio</a></li>                                  
+                                        <li><a href="#resume">Resume</a></li>                                  
+                                        <li><a href="#skills">Skills</a></li>                                  
+                                        <li><a href="#contact">Contact</a></li>                                  
+                                    </ul>
+                                </nav>                            
+                            </div>
+                        </div>               
+
+                        <div class="my-info-wrapper">
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+                            
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+                            
+                            <div class="my-info">
+                                <p class="my-info-title">INFO TITLE</p>
+                                <p class="my-info-content">CONTENT</p>
+                            </div>
+
+                            <img class="my-info-signature" src="images/signature.png" alt="" style="display:none;"/>  
+                        </div>   
+
+                        <div class="big-num num">    
+                                                      
+                            0<span id="num"></span>
+                            <div class="icon-scroll"></div>  
+                        </div>
+                    </header>
+                </div>        
+
             </div>
-            <div class="menu-title">MAN&WOLF MEDIA<br/>PLEASE SCROLL<img style="padding:25px;" src="img/logo.png"></div>
-            <div class="vertical-menu">
-              <a href="#firstSection" class="active">Home</a>
-              <a href="#secondSection">Link 1</a>
-              <a href="#thirdSection">Link 2</a>
-            </div> 
-</div>
-        </div>
 
-      
-      <div id="fullpage" class="animated fadeIn delay-2s">
-        <section class="vertical-scrolling" id="first-scroll">
-          <div class="background-overlay"></div>
-          <video id="myVideo" loop muted data-autoplay>
-            <source src="https://demo.cocobasic.com/volos-wp/demo-2/wp-content/uploads/2019/12/video.mp4" type="video/mp4">
-          </video>
-          <div id="layer">
-          <h2><span>fullPage.js</span></h2>
-          <h3>This is the first section</h3>
-        </div>
-        
-        </section>
-        <section class="vertical-scrolling">
-          <h2>fullPage.js</h2>
-          <h3>This is the second section</h3>
-          <div class="scroll-icon">
-            <p>Jump into the last slide</p>
-            <a href="#fifthSection/1" class="icon-up-open-big"></a>
-          </div>
-        </section>
-        <section class="vertical-scrolling">
-          <h2>fullPage.js</h2>
-          <h3>This is the third section</h3>
-        </section>
-        <section class="vertical-scrolling">
-          <h2>fullPage.js</h2> 
-          <h3>This is the fourth section</h3>
-        </section>
-        <section class="vertical-scrolling">
-          <div class="horizontal-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the fifth section and it contains the first slide (actually section == first slide)</h3>
-          </div>
-          <div class="horizontal-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the second slide</h3> 
-            <p class="end">Thank you!</p>
-          </div>
-        </section>
-        <section class="vertical-scrolling">
-          <div class="horizontal-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the fifth section and it contains the first slide (actually section == first slide)</h3>
-          </div>
-          <div class="horizontal-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the second slide</h3> 
-            <p class="end">Thank you!</p>
-          </div>
-        </section>
-      </div>
-      <script>
-          
-// variables
-var $header_top = $('.header-top');
-var $nav = $('nav');
+            <div class="content-right"  id="fullpage">  
+                <div class="content-right-wrapper">
+                    <div class="animated fadeIn fast delay-3s">  
+                    <!-- Home Section -->  
+                    <div id="home" class="section full-width-section">
+                        <div class="section-wrapper block">
+                            <div class="home-left-part">
+                                
+                                <p class="site-des fromLeft">The website & webstore design experts.</p>
+                                <h1 class="entry-title fromRight">MAN&WOLF<br />MEDIA.</h1>                                
+                                <p class="site-info fromLeft">
+                                    Faucibus sed tristique fames sed aliquet ultricies eget viverra arcu. Vitae faucibus diam consequat maecenas. Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Volutpat faucibus  
+                                </p>
+
+                                <div class="social-links">
+                                    <a href="#">LINKEDIN</a>
+                                    <a href="#">TWITTER</a>
+                                    <a href="#">INSTAGRAM</a>
+                                </div>
+                            </div>                            
+                            <div class="home-right-part">                                
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <!-- Service Section -->  
+                    <div id="service" class="section fp-auto-height-responsive">                        
+                        <div class="section-wrapper block">
+                            <div class="content-1300">
+                                <div class="row">
+                                    <div class="one-half width-55">
+                                        <div class="services-wrapper">
+                                            <div class="service-holder">
+                                                <img src="images/service1.png" alt="" style="display:none;"/>
+                                                <h4 class="service-title">Design</h4>
+                                                <div class="service-text">
+                                                    Quam facilisi nunc faucibus at porttitor vestibulum consequat dignissim tellus sollicitudin
+                                                </div>                                        
+                                            </div>                               
+
+                                            <div class="service-holder m-right-0">
+                                                <img src="images/service2.png" alt=""  style="display:none;"/>
+                                                <h4 class="service-title">Develop</h4>
+                                                <div class="service-text">
+                                                    Tellus pharetra erat tristique erat donec dignissim etiam sed malesik enim sodales lorem ipsum
+                                                </div>                                        
+                                            </div>                                
+
+                                            <div class="service-holder m-bottom-0">
+                                                <img src="images/service3.png" alt=""  style="display:none;"/>
+                                                <h4 class="service-title">Write</h4>
+                                                <div class="service-text">
+                                                    Vestibulum consequat, dignissim tellus sollicitudin vulputate elit aliquet ullamcorper feugiat nisi
+                                                </div>                                        
+                                            </div>
+
+                                            <div class="service-holder m-right-0 m-bottom-0">
+                                                <img src="images/service4.png" alt="" style="display:none;"/>
+                                                <h4 class="service-title">Promote</h4>
+                                                <div class="service-text">
+                                                    Quam facilisi nunc faucibus at porttitor vestibulum consequat dignissim tellus sollicitudin
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="one-half width-40 last">                                
+                                        <h2 class="entry-title section-title fromLeft">Services</h2>
+                                        <p class="section-info">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque. Nunc ac fames lectus in libero aliquet. 
+                                        </p>
+                                        <p>
+                                            Faucibus sed tristique fames sed aliquet ultricies eget viverra arcu. Vitae faucibus diam consequat maecenas. Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Volutpat faucibus 
+                                        </p>
+
+                                        <div class="button-group-wrapper">
+                                            <a class="button">Download CV</a> 
+                                            <a href="#portfolio" class="button">Check My Portfolio</a>                                                                   
+                                        </div>
+                                    </div>                                                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Section -->  
+                    <div id="portfolio" class="section">                        
+                        <div class="section-wrapper block">
+                            <div class="content-1300">
+                                <div id="portfolio-wrapper" class="relative">
+                                    <div class="category-filter">
+                                        <div class="category-filter-icon"></div>                       
+                                    </div>
+                                    <div class="category-filter-list button-group filters-button-group">
+                                        <div class="button is-checked" data-filter="*">All</div>
+                                        <div class="button" data-filter=".text">Text</div>
+                                        <div class="button" data-filter=".video">Video</div>
+                                        <div class="button" data-filter=".image">Image</div>                                        
+                                    </div>
+                                    <div class="portfolio-load-content-holder"></div>
+                                    <div class="grid" id="portfolio-grid">                                                            
+                                        <div class="grid-sizer"></div>
+
+                                        <div id="p-item-1" class="grid-item element-item p-one-third text">
+                                            <a class="item-link ajax-portfolio" href="portfolio-1.html" data-id="1">
+                                                <img src="images/portfolio1.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div id="p-item-2" class="grid-item element-item p-one-third text">
+                                            <a class="item-link ajax-portfolio" href="portfolio-2.html" data-id="2">
+                                                <img src="images/portfolio2.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div id="p-item-3" class="grid-item element-item p-one-third text">
+                                            <a class="item-link ajax-portfolio" href="portfolio-3.html" data-id="3">
+                                                <img src="images/portfolio3.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="grid-item element-item p-one-third video">
+                                            <a class="item-link" href="https://www.youtube.com/watch?v=ZWncNe_0yug" data-rel="prettyPhoto[portfolio]">
+                                                <img src="images/portfolio4.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="grid-item element-item p-one-third image">
+                                            <a class="item-link" href="images/item_03.jpg" data-rel="prettyPhoto[portfolio]">
+                                                <img src="images/portfolio5.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="grid-item element-item p-one-third image">
+                                            <a class="item-link" href="images/item_02.jpg" data-rel="prettyPhoto[portfolio]">
+                                                <img src="images/portfolio6.jpg" alt="" />
+                                                <div class="portfolio-text-holder">
+                                                    <div class="portfolio-text-wrapper">
+                                                        <p class="portfolio-text">Home</p>
+                                                        <p class="portfolio-cat">Text</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>                
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resume Section -->  
+                    <div id="resume" class="section">                        
+                        <div class="section-wrapper block">
+                            <div class="content-1300">  
+                                <div class="row">
+                                    <div class="one-half width-55">
+                                        <h2 class="entry-title section-title">Experience</h2>
+
+                                        <ul class="timeline-holder">                                        
+                                            <li class="timeline-event">
+                                                <span class="timeline-circle"></span>
+                                                <div class="timeline-event-content">
+                                                    <b>2015 - 2017</b> Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod mauris in vitae viverra blandit lectus diam feugiat. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod.
+                                                </div>
+                                                <div class="timeline-event-date">2015</div>
+                                            </li>
+
+                                            <li class="timeline-event">
+                                                <span class="timeline-circle"></span>
+                                                <div class="timeline-event-content">                                    
+                                                    <b>2017 - 2018</b> Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod mauris in vitae viverra blandit lectus diam feugiat. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod.
+                                                <div class="timeline-event-date">2017</div>
+                                            </li>
+
+                                            <li class="timeline-event">
+                                                <span class="timeline-circle"></span>
+                                                <div class="timeline-event-content">
+                                                    <b>2018 - 2020</b> Eget enim aliquam euismod mauris in vitae viverra blandit lectus faucibus diam consequat maecenas turpis metus sit diam purus leo in varius. Nunc amet tristique volutpat adipiscing vulputate phasellus eget enim.
+                                                </div>
+                                                <div class="timeline-event-date">2018</div>
+                                            </li>
+
+                                            <li class="timeline-event">
+                                                <span class="timeline-circle"></span>
+                                                <div class="timeline-event-content">
+                                                    <b>2020 - 2022</b> Tendrils of gossamer clouds, the ash of stellar alchemy tendrils of true gossamer clouds vangelis the sky calls to us rich in heavy atoms something. Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod mauris in vitae viverra blandit lectus diam feugiat.
+                                                </div>
+                                                <div class="timeline-event-date">2020</div>
+                                            </li>                                           
+
+                                            <li class="timeline-event">
+                                                <span class="timeline-circle"></span>
+                                                <div class="timeline-event-content">
+                                                    <b>2022 - 2025</b> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In nec ipsum risus. Nulla vulputate pulvinar consectetur. Praesent semper sem eget nisl viverra, vitae vulputate metus placerat. 
+                                                </div>
+                                                <div class="timeline-event-date">2025</div>
+                                            </li>                                           
+                                        </ul>
+                                    </div>
+
+                                    <div class="one-half width-40 last">
+                                        <h2 class="entry-title section-title">Cover letter</h2>
+                                        <p class="section-info">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque. Nunc ac fames lectus in libero aliquet.  Mauris egestas nulla arcu, ut vestibulum diam vulputate non. Ut massa mauris, condimentum ut tincidunt eu, mattis euismod dolor.
+                                        </p>
+                                        <p>
+                                            Faucibus sed tristique fames sed aliquet ultricies eget viverra arcu. Vitae faucibus diam consequat maecenas. Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Volutpat faucibus sed condimentum aliquet mi, nec lobortis neque gravida tempor. Praesent vel commodo dolor, at vehicula turpis.
+                                        </p>
+
+                                        <p>
+                                            Phasellus non dui sed eros scelerisque gravida eu lobortis magna. Sed vulputate, lacus blandit posuere aliquet, enim purus dignissim nunc, at efficitur nulla lacus id quam. Morbi feugiat neque a quam viverra auctor. 
+                                        </p>                                        
+
+                                        <img class="my-signature" src="images/signature2.png" alt="" style="display:none;">                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->  
+                    <div id="skills" class="section">                        
+                        <div class="section-wrapper block">
+                            <div class="content-1300"> 
+                                <div class="row m-bottom-60">
+                                    <h2 class="entry-title section-title">Skills</h2>
+
+                                    <div class="skill-circle-holder">
+                                        <div class="skill-circle">
+                                            <div class="skill-circle-wrapper relative" data-value="0.99" data-color="#5555BF" data-empty-color="#21202c">
+                                                <span class="skill-circle-num"></span>                                            
+                                            </div>
+                                            <p class="skill-circle-text">HTML/CSS</p>
+                                        </div>
+
+                                        <div class="skill-circle">
+                                            <div class="skill-circle-wrapper relative" data-value="0.90" data-color="#5555BF" data-empty-color="#21202c">
+                                                <span class="skill-circle-num"></span>                                            
+                                            </div>
+                                            <p class="skill-circle-text">CMS</p>
+                                        </div>                                
+
+                                        <div class="skill-circle">
+                                            <div class="skill-circle-wrapper relative" data-value="0.75" data-color="#5555BF" data-empty-color="#21202c">
+                                                <span class="skill-circle-num"></span>                                            
+                                            </div>
+                                            <p class="skill-circle-text">JS</p>
+                                        </div>
+
+                                        <div class="skill-circle">
+                                            <div class="skill-circle-wrapper relative" data-value="0.31" data-color="#5555BF" data-empty-color="#21202c">
+                                                <span class="skill-circle-num"></span>                                            
+                                            </div>
+                                            <p class="skill-circle-text">PHP</p>
+                                        </div>
+                                    </div>                                    
+                                </div>
 
 
+                                <div class="row">
+                                    <div class="one-half">                                    
+                                        <div class="skills-holder">
+                                            <div class="skill-holder">                                        
+                                                <div class="skill-text">                                            
+                                                    <div class="skill">
+                                                        <div class="skill-fill" data-fill="75%"></div>                                                    
+                                                    </div>              
+                                                    <span>Creativity</span>
+                                                </div>                
+                                                <div class="skill-percent">75%</div>
+                                            </div>
 
-// toggle menu 
-$header_top.find('a').on('click', function() {
-  $(this).parent().toggleClass('open-menu');
-});
+                                            <div class="skill-holder">                                        
+                                                <div class="skill-text">                                            
+                                                    <div class="skill">
+                                                        <div class="skill-fill" data-fill="48%"></div>                                                   
+                                                    </div>              
+                                                    <span>Cooking</span>
+                                                </div>                                            
+                                                <div class="skill-percent">48%</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="one-half last">
+                                        <div class="skills-holder sec-skills-holder">
+                                            <div class="skill-holder">                                        
+                                                <div class="skill-text">                                            
+                                                    <div class="skill">
+                                                        <div class="skill-fill" data-fill="90%"></div>                                                   
+                                                    </div>                                                
+                                                    <span>PhP</span>
+                                                </div>                
+                                                <div class="skill-percent">90%</div>
+                                            </div>
 
+                                            <div class="skill-holder">                                        
+                                                <div class="skill-text">                                            
+                                                    <div class="skill">
+                                                        <div class="skill-fill" data-fill="62%"></div>                                                   
+                                                    </div>              
+                                                    <span>Marketing</span>
+                                                </div>                
+                                                <div class="skill-percent">62%</div>
+                                            </div>                                    
+                                        </div>
+                                    </div>                                    
+                                </div>                                
+                            </div>                            
+                        </div>
+                    </div>          
+                    
+                    <!-- Contact Section -->  
+                    <div id="contact" class="section">                        
+                        <div class="section-wrapper block">
+                            <div class="content-1300">   
+                                <div class="row">
+                                    <h2 class="entry-title section-title">Get in touch</h2>
+                                    <div class="one-half width-40">
 
-// fullpage customization
-$('#fullpage').fullpage({
-  sectionsColor: ['#B8AE9C', '#1b1925', '#F2AE72', '#5C832F', '#B8B89F'],
-  sectionSelector: '.vertical-scrolling',
-  slideSelector: '.horizontal-scrolling',
-  navigation: true,
-  scrollHorizontally: true,
-  fadingEffect:'sections',
-  slidesNavigation: true,
-  controlArrows: false,
-  fadingEffect:true,
-  autoScrolling: true,
-  anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
-  menu: '#menu',
+                                        <p class="section-info">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.
+                                        </p>
+                                        <p>
+                                            Magni dolores eos qui sed quia consequuntur ratione voluptatem sequi nesciunt permano Nence of the stars from which we spring muse about as a patch of light billions upon billions.                                        
+                                        </p>                                    
+                                        <p>
+                                            Energy hidden in matter a mote of lorem ipsum dust suspended in a sunbeam billions upon ratione voluptatem sequi nesciunt permano lorem ipsum.                                                                  
+                                        </p>
+                                        <p>
+                                            <b>ADDRESS:</b> Somewhere, uk <br>
+                                            <b>EMAIL:</b> hello@hi.com <br>
+                                            <b>WEBSITE:</b> www.manandwolf.co.uk <br>
+                                        </p>
+                                    </div>
 
-  afterLoad: function(anchorLink, index) {
+                                    <div class="one-half width-55 last">
+                                        <div class="contact-form">
+                                            <p>
+                                                <input id="name" type="text" name="your-name" placeholder="Name">
+                                            </p>
+                                            <p>
+                                                <input id="contact-email" type="email" name="your-email" placeholder="Email">
+                                            </p>                                    
+                                            <p>
+                                                <input id="subject" type="text" name="your-subject" placeholder="Subject">
+                                            </p>
+                                            <p>
+                                                <textarea id="message" name="your-message" placeholder="Message"></textarea>
+                                            </p>
+                                            <p class="contact-submit-holder">
+                                                <input type="submit" value="SEND">
+                                            </p>                                
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                </div>
+                </div>
+            </div>            
+        </div>        
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>			                                                               
+        <script src='js/imagesloaded.pkgd.js'></script>                
+        <script src='js/jquery.prettyPhoto.js'></script>                
+        <script src='js/isotope.pkgd.js'></script>                
+        <script src='js/jquery.smartmenus.min.js'></script>                           
+        <script src='js/owl.carousel.min.js'></script>                                                            
+        <script src='js/circle-progress.min.js'></script>                                                            
+        <script src='js/main.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/extras.css">
+        <script> 
+        if (screen && screen.width > 768) { 
+            document.write('<script type="text/javascript" src="dist/fullpage.js"><\/script>'); 
+            } 
+        </script> 
+        <script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+<script type="text/javascript">
+    myFullpage = new fullpage('#fullpage', {
+	//Navigation
+	menu: '#header-main-menu',
+	lockAnchors: false,
+    anchors:['index', 'services','showcase','about-us','our-skills','contact-us'],
+	navigation: false,
+	navigationPosition: 'right',
+	showActiveTooltip: false,
+	slidesNavigation: false,
+	slidesNavPosition: 'bottom',
+
+	//Scrolling
+	css3: true,
+	scrollingSpeed: 700,
+	autoScrolling: true,
+	fitToSection: true,
+	fitToSectionDelay: 1000,
+	scrollBar: false,
+	easing: 'easeInOutCubic',
+	easingcss3: 'ease',
+	loopBottom: false,
+	loopTop: false,
+	loopHorizontal: false,
+	continuousVertical: false,
+	continuousHorizontal: false,
+	scrollHorizontally: false,
+	interlockedSlides: false,
+	dragAndMove: false,
+	offsetSections: false,
+	resetSliders: false,
+	fadingEffect: false,
+	scrollOverflow: false,
+	scrollOverflowReset: false,
+	scrollOverflowOptions: null,
+	touchSensitivity: 15,
+	bigSectionsDestination: 'top',
+	lazyLoading: true,
+
+	//events
+	onLeave: function(index, nextIndex, direction) {
+    var leavingSection = $(this);
+    $(leavingSection).removeClass('animated slideInLeft');},
+    afterLoad: function(anchorLink, index) {
     var slideNumber = $('.fp-section.active').index() + 1;
  //do whatever here
+ $('#small-num').html(slideNumber);
  $('#num').html(slideNumber);
-    $nav.css('background', 'rgba(0, 47, 77, .25)');
-    if (index == 5) {
-        $('#fp-nav').hide();
-      }
-  },
-
-  onLeave: function(index, nextIndex, direction) {
-    if(index == 5) {
-      $('#fp-nav').show();
-    }
-  },
-
-  afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
-    $('#num').append(Index);
-    if(anchorLink == 'fifthSection' && slideIndex == 1) {
-      $.fn.fullpage.setAllowScrolling(false, 'up');
-      $header_top.css('background', 'transparent');
-      $nav.css('background', 'transparent');
-      $(this).css('background', '#374140');
-      $(this).find('h2').css('color', 'white');
-      $(this).find('h3').css('color', 'white');
-      $(this).find('p').css(
-        {
-          'color': '#DC3522',
-          'opacity': 1,
-          'transform': 'translateY(0)'
-        }
-      );
-    }
-  }, 
-
-  onSlideLeave: function( anchorLink, index, slideIndex, direction) {
-    if(anchorLink == 'fifthSection' && slideIndex == 1) {
-      $.fn.fullpage.setAllowScrolling(true, 'up');
-      $header_top.css('background', 'rgba(0, 47, 77, .3)');
-      $nav.css('background', 'rgba(0, 47, 77, .25)');
-    }
-  } 
-}); 
-      </script>
-      <script>
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-        </script>
-</body>
-</html> 
+},
+	afterRender: function(){},
+	afterResize: function(width, height){},
+	afterReBuild: function(){},
+	afterResponsive: function(isResponsive){},
+	afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+    $('#small-num').append(Index);
+    $('#num').append(Index);},
+	onSlideLeave: function(section, origin, destination, direction){$(this).removeClass('section-active');}
+});
+</script>
+    </body>
+</html>
